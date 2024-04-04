@@ -1,4 +1,4 @@
-using System;
+sing System;
 
 class Program
 {
@@ -15,7 +15,21 @@ class Program
     static string ReverseString(string str)
     {
         char[] charArray = str.ToCharArray();
-        Array.Reverse(charArray);
+        int start = 0;
+        int end = str.Length - 1;
+
+        while (start < end)
+        {
+            // Troca os caracteres na posição 'start' e 'end'
+            char temp = charArray[start];
+            charArray[start] = charArray[end];
+            charArray[end] = temp;
+
+            // Move os ponteiros para o próximo par de caracteres
+            start++;
+            end--;
+        }
+
         return new string(charArray);
     }
 }
