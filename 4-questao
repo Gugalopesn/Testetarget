@@ -1,0 +1,64 @@
+using System;
+
+class LampSwitchProblem
+{
+    static void Main(string[] args)
+    {
+        // Define três interruptores e três lâmpadas
+        bool[] switches = new bool[3];
+        bool[] lamps = new bool[3];
+
+        // Primeira ida à sala das lâmpadas
+        Console.WriteLine("Primeira ida a sala das lampadas:");
+
+        // Ligar o primeiro interruptor (0) e desligar os outros
+        switches[0] = true;
+        switches[1] = false;
+        switches[2] = false;
+
+        // Simulando o estado das lâmpadas
+        lamps[0] = switches[0];
+        lamps[1] = switches[1];
+        lamps[2] = switches[2];
+
+        // Imprime o estado atual das lâmpadas
+        PrintLampState(lamps);
+
+        // Segunda ida à sala das lâmpadas
+        Console.WriteLine("Segunda ida a sala das lampadas:");
+
+        // Desliga o primeiro interruptor e liga o segundo (1)
+        switches[0] = false;
+        switches[1] = true;
+
+        // Simulando o estado das lâmpadas novamente
+        lamps[0] = switches[0];
+        lamps[1] = switches[1];
+        lamps[2] = switches[2];
+
+        // Imprime o estado atual das lâmpadas
+        PrintLampState(lamps);
+
+        // Identificando qual interruptor controla qual lâmpada
+        for (int i = 0; i < 3; i++)
+        {
+            if (lamps[i])
+            {
+                Console.WriteLine($"O interruptor {i} controla a lampada {i}.");
+            }
+            else
+            {
+                Console.WriteLine($"O interruptor {i} nao controla a lampada {i}.");
+            }
+        }
+    }
+
+    // Método para imprimir o estado das lâmpadas
+    static void PrintLampState(bool[] lamps)
+    {
+        for (int i = 0; i < lamps.Length; i++)
+        {
+            Console.WriteLine($"Lampada {i}: {(lamps[i] ? "Ligada" : "Desligada")}");
+        }
+    }
+}
