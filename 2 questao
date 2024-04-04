@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Informe um numero para verificar se pertence a sequencia de Fibonacci:");
+        int number = int.Parse(Console.ReadLine());
+
+        bool isFibonacci = CheckFibonacci(number);
+
+        if (isFibonacci)
+        {
+            Console.WriteLine($"O numero {number} pertence a sequencia de Fibonacci.");
+        }
+        else
+        {
+            Console.WriteLine($"O numero {number} nao pertence a sequencia de Fibonacci.");
+        }
+    }
+
+    static bool CheckFibonacci(int number)
+    {
+        int a = 0;
+        int b = 1;
+
+        while (b < number)
+        {
+            int temp = a;
+            a = b;
+            b = temp + b;
+        }
+
+        return b == number;
+    }
+}
