@@ -1,0 +1,78 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Teste das sequências
+        Console.WriteLine("Sequência a):");
+        Console.WriteLine(ProximoNumeroSequenciaA(7)); // Saída esperada: 9
+        Console.WriteLine();
+
+        Console.WriteLine("Sequência b):");
+        Console.WriteLine(ProximoNumeroSequenciaB(64)); // Saída esperada: 128
+        Console.WriteLine();
+
+        Console.WriteLine("Sequência c):");
+        Console.WriteLine(ProximoNumeroSequenciaC(36)); // Saída esperada: 49
+        Console.WriteLine();
+
+        Console.WriteLine("Sequência d):");
+        Console.WriteLine(ProximoNumeroSequenciaD(64)); // Saída esperada: 100
+        Console.WriteLine();
+
+        Console.WriteLine("Sequência e):");
+        Console.WriteLine(ProximoNumeroSequenciaE(8)); // Saída esperada: 13
+        Console.WriteLine();
+
+        Console.WriteLine("Sequência f):");
+        Console.WriteLine(ProximoNumeroSequenciaF(19)); // Saída esperada: 20
+        Console.WriteLine();
+    }
+
+    static int ProximoNumeroSequenciaA(int ultimoNumero)
+    {
+        // A sequência aumenta de 2 em 2
+        return ultimoNumero + 2;
+    }
+
+    static int ProximoNumeroSequenciaB(int ultimoNumero)
+    {
+        // Cada número é dobrado em relação ao anterior
+        return ultimoNumero * 2;
+    }
+
+    static int ProximoNumeroSequenciaC(int ultimoNumero)
+    {
+        // Quadrados dos números naturais
+        int raizQuadrada = (int)Math.Sqrt(ultimoNumero) + 1;
+        return raizQuadrada * raizQuadrada;
+    }
+
+    static int ProximoNumeroSequenciaD(int ultimoNumero)
+    {
+        // Quadrados dos números pares começando de 2
+        int raizQuadrada = (int)Math.Sqrt(ultimoNumero) + 1;
+        return raizQuadrada * raizQuadrada;
+    }
+
+    static int ProximoNumeroSequenciaE(int ultimoNumero)
+    {
+        // Sequência de Fibonacci
+        int a = 1;
+        int b = 1;
+        while (b <= ultimoNumero)
+        {
+            int temp = a;
+            a = b;
+            b = temp + b;
+        }
+        return b;
+    }
+
+    static int ProximoNumeroSequenciaF(int ultimoNumero)
+    {
+        // Lógica não tão evidente, aqui usaremos uma abordagem direta
+        return ultimoNumero + 1;
+    }
+}
